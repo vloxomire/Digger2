@@ -1,0 +1,16 @@
+C:\0-Cursos\C#\Digger2\Digger2\obj\Debug\Digger2.csprojAssemblyReference.cache
+C:\0-Cursos\C#\Digger2\Digger2\obj\Debug\Digger2.csproj.CoreCompileInputs.cache
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Digger2.exe.config
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Digger2.exe
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Digger2.pdb
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.Audio.dll
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.Graphics.dll
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.System.dll
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.Window.dll
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.Audio.xml
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.Graphics.xml
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.System.xml
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.Window.xml
+C:\0-Cursos\C#\Digger2\Digger2\obj\Debug\Digger2.csproj.CopyComplete
+C:\0-Cursos\C#\Digger2\Digger2\obj\Debug\Digger2.exe
+C:\0-Cursos\C#\Digger2\Digger2\obj\Debug\Digger2.pdb
