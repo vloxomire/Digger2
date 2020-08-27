@@ -54,7 +54,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Juego.cs" />
+    <Compile Include="Jugador.cs" />
     <Compile Include="MainP.cs" />
+    <Compile Include="Mapa.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
