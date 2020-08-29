@@ -14,35 +14,37 @@ namespace Digger2
         //Campos
         int CmapaAncho;
         int CmapaAlto;
-        int casilleroTamanio;
+        int patronesTamanio;
         int mapaAncho;
         int mapaAlto;
         Texture textura;
-        Sprite[] mapaCasillero;
-        Sprite[,] casilleros;
+        Sprite[] mapaPatrones;
+        Sprite[,] patrones;
         //Metodos
         public Mapa() 
         {
+            //Con el Tiled se definio el tamaño del mapa de 100x100 patrones y
+            //con un tamaño por patrón dde32px x 32px
             CmapaAncho = 21;
             CmapaAlto = 23;
             mapaAlto = 100;
             mapaAncho = 100;
-            casilleroTamanio = 32;
+            patronesTamanio = 32;
 
-            textura = new Texture("Mapa/Terrain_atlas.png");
-            mapaCasillero= new Sprite[CmapaAncho *CmapaAlto];
+            textura = new Texture("Mapa/terrain.png");
+            mapaPatrones= new Sprite[CmapaAncho *CmapaAlto];
 
             for (int y = 0; y < CmapaAlto; y++)
             {
                 for (int x = 0; x < CmapaAncho; x++)
                 {
-                    IntRect rect = new IntRect(x * casilleroTamanio, y*casilleroTamanio,casilleroTamanio,casilleroTamanio);
-                    mapaCasillero[(y * CmapaAncho) + x] = new Sprite(textura,rect);
+                    IntRect rect = new IntRect(x * patronesTamanio, y*patronesTamanio,patronesTamanio,patronesTamanio);
+                    mapaPatrones[(y * CmapaAncho) + x] = new Sprite(textura,rect);
                 }
             }
 
-            casilleros = new Sprite[mapaAncho,mapaAlto];
-            StreamReader lector = new StreamReader("Mapa/Cueva1.csv");
+            patrones = new Sprite[mapaAncho,mapaAlto];
+            StreamReader lector = new StreamReader("Mapa/Test.csv");
 
             for (int y = 0; y < mapaAlto; y++)
             {
@@ -52,8 +54,8 @@ namespace Digger2
                 for (int x = 0; x < mapaAncho; x++)
                 {
                     int id = Convert.ToInt32(objetos[x]);
-                    casilleros[x, y] = new Sprite(mapaCasillero[id]);
-                    casilleros[x, y].Position = new Vector2f(casilleroTamanio*x,casilleroTamanio*y);
+                    patrones[x, y] = new Sprite(mapaPatrones[id]);
+                    patrones[x, y].Position = new Vector2f(patronesTamanio*x,patronesTamanio*y);
                 }
             }
             lector.Close();
@@ -65,7 +67,7 @@ namespace Digger2
                 for (int x = 0; x < mapaAncho; x++)
                 {
                     //En el Game crear un objeto para poder llamarlo
-                    ventana.Draw(casilleros[x,y]);
+                    ventana.Draw(patrones[x,y]);
                 }
             }
         }

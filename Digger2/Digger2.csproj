@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Mapa\Cueva1.csv">
+    <None Include="Mapa\Test.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -62,8 +62,9 @@
     <Compile Include="MainP.cs" />
     <Compile Include="Mapa.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="Mapa\terrain_atlas.png">
+    <Content Include="Mapa\terrain.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
