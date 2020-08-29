@@ -37,6 +37,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Mapa\Cueva1.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +61,11 @@
     <Compile Include="Jugador.cs" />
     <Compile Include="MainP.cs" />
     <Compile Include="Mapa.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mapa\terrain_atlas.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

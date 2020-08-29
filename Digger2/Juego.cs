@@ -11,10 +11,12 @@ namespace Digger2
     class Juego
     {
         RenderWindow ventana;
+        Mapa mapa;
         public Juego()
         {
             //ventana
             ventana = new RenderWindow(new VideoMode(320, 480), "Digger2");
+            mapa = new Mapa();
         }
         public void Comienzo() 
         {
@@ -28,7 +30,8 @@ namespace Digger2
             while (ventana.IsOpen)
             {
                 ventana.DispatchEvents();//escuchadores
-                ventana.Draw(rigby);
+                ventana.Clear(new Color(146,108,66));
+                mapa.Draw(ventana);
                 ventana.Display();//Muestro la ventana
             }
         }

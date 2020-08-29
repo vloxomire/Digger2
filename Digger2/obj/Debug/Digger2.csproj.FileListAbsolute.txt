@@ -14,3 +14,5 @@ C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\SFML.Window.xml
 C:\0-Cursos\C#\Digger2\Digger2\obj\Debug\Digger2.csproj.CopyComplete
 C:\0-Cursos\C#\Digger2\Digger2\obj\Debug\Digger2.exe
 C:\0-Cursos\C#\Digger2\Digger2\obj\Debug\Digger2.pdb
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Mapa\terrain_atlas.png
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Mapa\Cueva1.csv
