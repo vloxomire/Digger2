@@ -25,15 +25,14 @@ namespace Digger2
         {
             //Con el Tiled se definio el tamaño del mapa de 100x100 patrones y
             //con un tamaño por patrón dde32px x 32px
-            CmapaAncho = 21;
-            CmapaAlto = 23;
+            CmapaAncho = 21;//terrain
+            CmapaAlto = 23;//terrain
             mapaAlto = 100;
             mapaAncho = 100;
             patronesTamanio = 32;
 
             textura = new Texture("Mapa/terrain.png");
             mapaPatrones= new Sprite[CmapaAncho *CmapaAlto];
-
             for (int y = 0; y < CmapaAlto; y++)
             {
                 for (int x = 0; x < CmapaAncho; x++)
@@ -45,7 +44,6 @@ namespace Digger2
 
             patrones = new Sprite[mapaAncho,mapaAlto];
             StreamReader lector = new StreamReader("Mapa/Test.csv");
-
             for (int y = 0; y < mapaAlto; y++)
             {
                 string linea = lector.ReadLine();

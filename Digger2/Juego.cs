@@ -1,10 +1,7 @@
 ﻿using SFML.Graphics;
+using SFML.System;
 using SFML.Window;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Digger2
 {
@@ -12,11 +9,18 @@ namespace Digger2
     {
         RenderWindow ventana;
         Mapa mapa;
+        AnimacionCaracter animacionCaracter;
+
+        private Clock clock;
+        
         public Juego()
         {
             //ventana
             ventana = new RenderWindow(new VideoMode(800, 600), "Digger2");
+
             mapa = new Mapa();
+            animacionCaracter = new AnimacionCaracter("Sprites/chicken_walk.png",32);
+            animacionCaracter.ActualEstado = CaracterEstados.MoverDer;
         }
         public void Comienzo() 
         {
@@ -26,12 +30,19 @@ namespace Digger2
             ventana.Closed += CerrarVentana;//escuchador de cerrar ventana con x.
             ventana.KeyReleased += SoltarEsc;//escuchador de cerrar cuando suelto una tecla.
             ventana.KeyPressed += PresionarShift;//escuchador para cerrar presionando una tecla
+
+            clock = new Clock();
             //Inicio del Juego, bucle
             while (ventana.IsOpen)
             {
+                
                 ventana.DispatchEvents();//escuchadores
                 ventana.Clear(new Color(47,129,54));
+
+                float deltaTime = clock.Restart().AsSeconds();
+               animacionCaracter.Update(deltaTime);
                 mapa.Draw(ventana);
+                animacionCaracter.Draw(ventana);
                 ventana.Display();//Muestro la ventana
             }
         }
