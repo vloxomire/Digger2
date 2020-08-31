@@ -9,7 +9,8 @@ namespace Digger2
     {
         RenderWindow ventana;
         Mapa mapa;
-        AnimacionCaracter animacionCaracter;
+        Gallina gallina;
+        AnimarCaracter animacionDelPersonaje;
 
         private Clock clock;
         
@@ -19,8 +20,7 @@ namespace Digger2
             ventana = new RenderWindow(new VideoMode(800, 600), "Digger2");
 
             mapa = new Mapa();
-            animacionCaracter = new AnimacionCaracter("Sprites/chicken_walk.png",32);
-            animacionCaracter.ActualEstado = CaracterEstados.MoverDer;
+            gallina = new Gallina();
         }
         public void Comienzo() 
         {
@@ -28,21 +28,26 @@ namespace Digger2
             ventana.SetFramerateLimit(60);
             //Escuchadores
             ventana.Closed += CerrarVentana;//escuchador de cerrar ventana con x.
-            ventana.KeyReleased += SoltarEsc;//escuchador de cerrar cuando suelto una tecla.
+            ////ventana.KeyReleased += SoltarEsc;//escuchador de cerrar cuando suelto una tecla.
             ventana.KeyPressed += PresionarShift;//escuchador para cerrar presionando una tecla
+
+            gallina.estadoActual = estadoDelPersonaje.MoverAbajo;
 
             clock = new Clock();
             //Inicio del Juego, bucle
             while (ventana.IsOpen)
             {
-                
                 ventana.DispatchEvents();//escuchadores
+
                 ventana.Clear(new Color(47,129,54));
 
                 float deltaTime = clock.Restart().AsSeconds();
-               animacionCaracter.Update(deltaTime);
+                //UPDATE
+                gallina.Update(deltaTime);
+                //DRAW
                 mapa.Draw(ventana);
-                animacionCaracter.Draw(ventana);
+                gallina.Draw(ventana);
+
                 ventana.Display();//Muestro la ventana
             }
         }

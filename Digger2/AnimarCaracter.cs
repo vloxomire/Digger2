@@ -5,7 +5,7 @@ using System;
 
 namespace Digger2
 {
-    public enum CaracterEstados
+    public enum estadoDelPersonaje
     {
         idle,
         MoverArriba,
@@ -13,11 +13,11 @@ namespace Digger2
         MoverIzq,
         MoverDer
     }
-    class AnimacionCaracter
+    abstract class AnimarCaracter
     {
         public float Xpos { get; set; }
         public float Ypos { get; set; }
-        public CaracterEstados ActualEstado { get; set; }
+        public estadoDelPersonaje estadoActual { get; set; }
 
         private Sprite sprite;
         private IntRect spriteRect;
@@ -31,18 +31,14 @@ namespace Digger2
         protected float moverVelocidad = 50;
         protected float animacionVelocidad = 0.1f;
 
-        public AnimacionCaracter(string nombreArchivo, int frameTamanio)
+        public AnimarCaracter(string nombreArchivo, int frameTamanio)
         {
             this.frameTamanio = frameTamanio;
             Texture textura = new Texture(nombreArchivo);
 
             spriteRect = new IntRect(0, 0, frameTamanio, frameTamanio);
             sprite = new Sprite(textura, spriteRect);
-            //Mover
-            Aarriba = new Animacion(0, 0, 4);
-            Aizq = new Animacion(32, 0, 4);//pq es de 32px
-            Ader = new Animacion(96, 0, 4);
-            Aabajo = new Animacion(64, 0, 4);
+           
 
             clock = new Clock();
             Time time = clock.Restart();
@@ -50,21 +46,21 @@ namespace Digger2
         public virtual void Update(float deltaTime)
         {
             Animacion animacionActual = null;
-            switch (ActualEstado)
+            switch (estadoActual)
             {
-                case CaracterEstados.MoverArriba:
+                case estadoDelPersonaje.MoverArriba:
                     animacionActual = Aarriba;
                     Ypos -= moverVelocidad * deltaTime;
                     break;
-                case CaracterEstados.MoverAbajo:
+                case estadoDelPersonaje.MoverAbajo:
                     animacionActual = Aabajo;
                     Ypos += moverVelocidad * deltaTime;
                     break;
-                case CaracterEstados.MoverIzq:
+                case estadoDelPersonaje.MoverIzq:
                     animacionActual = Aizq;
                     Xpos -= moverVelocidad * deltaTime;
                     break;
-                case CaracterEstados.MoverDer:
+                case estadoDelPersonaje.MoverDer:
                     animacionActual = Ader;
                     Xpos += moverVelocidad * deltaTime;
                     break;
