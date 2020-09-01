@@ -5,7 +5,7 @@ using System;
 
 namespace Digger2
 {
-    public enum estadoDelPersonaje
+    public enum EstadosDelPersonaje
     {
         idle,
         MoverArriba,
@@ -13,11 +13,11 @@ namespace Digger2
         MoverIzq,
         MoverDer
     }
-    abstract class AnimarCaracter
+    abstract class AnimarPersonajes
     {
         public float Xpos { get; set; }
         public float Ypos { get; set; }
-        public estadoDelPersonaje estadoActual { get; set; }
+        public EstadosDelPersonaje estadoActual { get; set; }
 
         private Sprite sprite;
         private IntRect spriteRect;
@@ -31,7 +31,7 @@ namespace Digger2
         protected float moverVelocidad = 50;
         protected float animacionVelocidad = 0.1f;
 
-        public AnimarCaracter(string nombreArchivo, int frameTamanio)
+        public AnimarPersonajes(string nombreArchivo, int frameTamanio)
         {
             this.frameTamanio = frameTamanio;
             Texture textura = new Texture(nombreArchivo);
@@ -48,19 +48,19 @@ namespace Digger2
             Animacion animacionActual = null;
             switch (estadoActual)
             {
-                case estadoDelPersonaje.MoverArriba:
+                case EstadosDelPersonaje.MoverArriba:
                     animacionActual = Aarriba;
                     Ypos -= moverVelocidad * deltaTime;
                     break;
-                case estadoDelPersonaje.MoverAbajo:
+                case EstadosDelPersonaje.MoverAbajo:
                     animacionActual = Aabajo;
                     Ypos += moverVelocidad * deltaTime;
                     break;
-                case estadoDelPersonaje.MoverIzq:
+                case EstadosDelPersonaje.MoverIzq:
                     animacionActual = Aizq;
                     Xpos -= moverVelocidad * deltaTime;
                     break;
-                case estadoDelPersonaje.MoverDer:
+                case EstadosDelPersonaje.MoverDer:
                     animacionActual = Ader;
                     Xpos += moverVelocidad * deltaTime;
                     break;

@@ -78,12 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animacion.cs" />
-    <Compile Include="AnimarCaracter.cs" />
+    <Compile Include="AnimarPersonajesIA.cs" />
+    <Compile Include="AnimarPersonajes.cs" />
     <Compile Include="Gallina.cs" />
     <Compile Include="Juego.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="MainP.cs" />
     <Compile Include="Mapa.cs" />
+    <Compile Include="PuntoACaminar.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -102,6 +104,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Sprites\chicken_walk.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\male.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

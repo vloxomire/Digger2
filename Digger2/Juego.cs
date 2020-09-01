@@ -7,20 +7,23 @@ namespace Digger2
 {
     class Juego
     {
-        RenderWindow ventana;
-        Mapa mapa;
-        Gallina gallina;
-        AnimarCaracter animacionDelPersonaje;
-
+        private RenderWindow ventana;
+        private Mapa mapa;
+        private Gallina gallina;
+        private Jugador jugador;
         private Clock clock;
+        private View camara;
         
         public Juego()
         {
             //ventana
             ventana = new RenderWindow(new VideoMode(800, 600), "Digger2");
+            //camara
+            camara = new View(new Vector2f(0,0),new Vector2f(800,600));
 
             mapa = new Mapa();
             gallina = new Gallina();
+            jugador = new Jugador();
         }
         public void Comienzo() 
         {
@@ -31,7 +34,7 @@ namespace Digger2
             ////ventana.KeyReleased += SoltarEsc;//escuchador de cerrar cuando suelto una tecla.
             ventana.KeyPressed += PresionarShift;//escuchador para cerrar presionando una tecla
 
-            gallina.estadoActual = estadoDelPersonaje.MoverAbajo;
+            gallina.estadoActual = EstadosDelPersonaje.MoverAbajo;
 
             clock = new Clock();
             //Inicio del Juego, bucle
@@ -44,9 +47,14 @@ namespace Digger2
                 float deltaTime = clock.Restart().AsSeconds();
                 //UPDATE
                 gallina.Update(deltaTime);
+                jugador.Update(deltaTime);
+                //CAMARA
+                camara.Center = new Vector2f(jugador.Xpos,jugador.Ypos);//Lo centro sobre el player
+                ventana.SetView(camara);//Cambiar a la vista actual, lo va centrando,mientras mueve cambia
                 //DRAW
                 mapa.Draw(ventana);
                 gallina.Draw(ventana);
+                jugador.Draw(ventana);
 
                 ventana.Display();//Muestro la ventana
             }

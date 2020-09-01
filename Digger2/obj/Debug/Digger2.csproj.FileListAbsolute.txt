@@ -20,3 +20,4 @@ C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Mapa\Cueva3.csv
 C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Sprites\chicken_walk.png
 C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Digger2.exe.CodeAnalysisLog.xml
 C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Digger2.exe.lastcodeanalysissucceeded
+C:\0-Cursos\C#\Digger2\Digger2\bin\Debug\Sprites\male.png

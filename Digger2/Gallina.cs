@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Digger2
 {
-    class Gallina : AnimarCaracter
+    class Gallina : AnimarPersonajes
     {
         public Gallina() :base("Sprites/chicken_walk.png", 32)
         {
