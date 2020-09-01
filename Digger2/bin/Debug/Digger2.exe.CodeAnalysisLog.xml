@@ -6,7 +6,7 @@
    <Modules>
     <Module Name="digger2.exe">
      <Messages>
-      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2020-09-01 00:04:32Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithAssemblyVersion" Category="Microsoft.Design" CheckId="CA1016" Status="Active" Created="2020-09-01 12:01:53Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Agregue un atributo AssemblyVersion a 'Digger2.exe'.</Issue>
       </Message>
      </Messages>
@@ -15,21 +15,28 @@
        <Types>
         <Type Name="AnimarPersonajes" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
          <Messages>
-          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2020-09-01 00:04:32Z" FixCategory="NonBreaking">
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2020-09-01 12:01:53Z" FixCategory="NonBreaking">
            <Issue Name="NonBreaking" Certainty="95" Level="CriticalError">Implemente IDisposable en 'AnimarPersonajes' porque crea miembros de los tipos IDisposable siguientes: 'Sprite', 'Clock'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="AnimarPersonajesConIA" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2020-09-01 12:01:53Z" FixCategory="NonBreaking">
+           <Issue Name="NonBreaking" Certainty="95" Level="CriticalError">Implemente IDisposable en 'AnimarPersonajesConIA' porque crea miembros de los tipos IDisposable siguientes: 'Clock'.</Issue>
           </Message>
          </Messages>
         </Type>
         <Type Name="Juego" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
          <Messages>
-          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2020-09-01 00:04:32Z" FixCategory="NonBreaking">
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2020-09-01 12:01:53Z" FixCategory="NonBreaking">
            <Issue Name="NonBreaking" Certainty="95" Level="CriticalError">Implemente IDisposable en 'Juego' porque crea miembros de los tipos IDisposable siguientes: 'RenderWindow', 'View', 'Clock'.</Issue>
           </Message>
          </Messages>
         </Type>
         <Type Name="Mapa" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
          <Messages>
-          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2020-09-01 00:04:32Z" FixCategory="NonBreaking">
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2020-09-01 12:01:53Z" FixCategory="NonBreaking">
            <Issue Name="NonBreaking" Certainty="95" Level="CriticalError">Implemente IDisposable en 'Mapa' porque crea miembros de los tipos IDisposable siguientes: 'Texture'.</Issue>
           </Message>
          </Messages>

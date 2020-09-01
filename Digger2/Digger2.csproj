@@ -78,7 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animacion.cs" />
-    <Compile Include="AnimarPersonajesIA.cs" />
+    <Compile Include="AnimarPersonajesConIA.cs" />
     <Compile Include="AnimarPersonajes.cs" />
     <Compile Include="Gallina.cs" />
     <Compile Include="Juego.cs" />

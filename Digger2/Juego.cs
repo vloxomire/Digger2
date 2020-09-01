@@ -2,6 +2,7 @@
 using SFML.System;
 using SFML.Window;
 using System;
+using System.Collections.Generic;
 
 namespace Digger2
 {
@@ -33,8 +34,11 @@ namespace Digger2
             ventana.Closed += CerrarVentana;//escuchador de cerrar ventana con x.
             ////ventana.KeyReleased += SoltarEsc;//escuchador de cerrar cuando suelto una tecla.
             ventana.KeyPressed += PresionarShift;//escuchador para cerrar presionando una tecla
-
-            gallina.estadoActual = EstadosDelPersonaje.MoverAbajo;
+            //PATRON CAMINATA
+            gallina.PuntoACaminarLista = new List<PuntoACaminar>();
+            gallina.PuntoACaminarLista.Add(new PuntoACaminar(0, 0));
+            gallina.PuntoACaminarLista.Add(new PuntoACaminar(100, 100));
+            gallina.PuntoACaminarLista.Add(new PuntoACaminar(0, 100));
 
             clock = new Clock();
             //Inicio del Juego, bucle
